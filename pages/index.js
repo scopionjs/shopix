@@ -17,6 +17,7 @@ export let getStaticProps = async () => {
   return {
     props: { data: data.data },
     revalidate: 120,
+    fallback: true,
   };
 };
 export default function Home({ data, data2 }) {
