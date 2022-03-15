@@ -12,7 +12,7 @@ import { dbDisconnect, dbConnect } from "../utils/db";
 import mongoose from "mongoose";
 import axios from "axios";
 export let getStaticProps = async () => {
-  let data = await axios.get("http://localhost:3000/api/product");
+  let data = await axios.get("https://shopix-blond.vercel.app/api/product");
 
   return {
     props: { data: data.data },

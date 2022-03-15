@@ -24,19 +24,22 @@ export default function LeftBar() {
       );
 
       if (response) {
-        let addProduct = await axios.post("http://localhost:3000/api/product", {
-          productImageId: response.data.secure_url,
-          productName: productName,
-          productsAvailable: +quantity,
-          fromId: authContext.logedInId,
-          category: category,
-          productCondition: condition,
-          price: +price,
-          productOwnerId: "seller",
-          description: description,
-          isSold: false,
-          rating: 1,
-        });
+        let addProduct = await axios.post(
+          "https://shopix-blond.vercel.app/api/product",
+          {
+            productImageId: response.data.secure_url,
+            productName: productName,
+            productsAvailable: +quantity,
+            fromId: authContext.logedInId,
+            category: category,
+            productCondition: condition,
+            price: +price,
+            productOwnerId: "seller",
+            description: description,
+            isSold: false,
+            rating: 1,
+          }
+        );
 
         e.target.textContent = "uploaded";
       }
